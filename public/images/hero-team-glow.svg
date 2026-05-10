@@ -1,0 +1,31 @@
+<svg width="1700" height="2000" viewBox="0 0 1700 2000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="80" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 0.1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+    </filter>
+    <radialGradient id="archGlow" cx="50%" cy="45%" r="56%">
+      <stop offset="0" stop-color="#C31CFF" stop-opacity="0.94"/>
+      <stop offset="0.54" stop-color="#A20FFF" stop-opacity="0.9"/>
+      <stop offset="0.82" stop-color="#234DFF" stop-opacity="0.82"/>
+      <stop offset="1" stop-color="#FF20EF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="14"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.32"/>
+      </feComponentTransfer>
+    </filter>
+    <clipPath id="photoArch">
+      <path d="M448 1382V676C448 477 609 316 808 316H892C1091 316 1252 477 1252 676V1382C1252 1398 1239 1412 1222 1412H478C461 1412 448 1398 448 1382Z"/>
+    </clipPath>
+  </defs>
+
+  <path d="M92 1882V775C92 396 399 88 779 88H921C1301 88 1608 396 1608 775V1882" stroke="url(#archGlow)" stroke-width="520" stroke-linecap="round" filter="url(#softGlow)" opacity="0.95"/>
+  <path d="M92 1882V775C92 396 399 88 779 88H921C1301 88 1608 396 1608 775V1882" stroke="url(#archGlow)" stroke-width="360" stroke-linecap="round" opacity="0.98"/>
+  <path d="M92 1882V775C92 396 399 88 779 88H921C1301 88 1608 396 1608 775V1882" stroke="#B719FF" stroke-width="250" stroke-linecap="round" opacity="0.62"/>
+  <rect width="1700" height="2000" filter="url(#grain)" opacity="0.45"/>
+
+  <image href="/images/hero-team.jpg" x="448" y="316" width="804" height="1096" preserveAspectRatio="xMidYMid slice" clip-path="url(#photoArch)"/>
+</svg>
